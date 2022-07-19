@@ -12,8 +12,16 @@ import java.io.IOException;
     public class HelloWorldServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String name =  req.getParameter("name");
         resp.setContentType("text/html; charset=utf-8");
-        resp.getWriter().write("<h1>Привіт Servlets! </h1>");
+        resp.getWriter().write("<h1>Привіт ${name}! </h1>".replace("${name}", parseName(req)));
         resp.getWriter().close();
+    }
+
+    private String parseName (HttpServletRequest request) {
+        if ( request.getParameterMap().containsKey("name")) {
+            return request.getParameter("name");
+        }
+        return "unnamed";
     }
 }

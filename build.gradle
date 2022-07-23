@@ -21,6 +21,8 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok:1.18.24'
 // https://mvnrepository.com/artifact/com.google.code.gson/gson
     implementation 'com.google.code.gson:gson:2.9.0'
+// https://mvnrepository.com/artifact/org.thymeleaf/thymeleaf
+    implementation 'org.thymeleaf:thymeleaf:3.1.0.M2'
 
 }
 
